@@ -7,13 +7,13 @@ Playing with SwiftUI and multiple features:
 - [x] multiple files/views
 - [x] `@State`, `@Binding` and `@StateObject`
 - [x] extensions
-- [x]`struct`, `class`, `arrays`, `enum`
-- [x]closures
+- [x] `struct`, `class`, `arrays`, `enum`
+- [x] closures
 - [x] `guard` `if let`, `switch` with `tuples`
 - [x] `init` overload
 - [x] `localization` for `English` and `Polish`
-- [x]SF Symbols
-- [x]overlay with `sheet`
+- [x] SF Symbols
+- [x] overlay with `sheet`
 - [x] basic animations
 - [x] optionals
 - [x] XCTest for main model
