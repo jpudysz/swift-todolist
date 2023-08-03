@@ -62,14 +62,24 @@ final class TodolistTests: XCTestCase {
     func testToggleTodo() throws {
         XCTAssertEqual(todolist.todos.first?.isCompleted, false)
         
-        let firstTodo = todolist.todos.first
+        let firstTodo = todolist.todos.first!
         
-        todolist.toggleTodo(for: 0)
+        todolist.toggleTodo(for: firstTodo)
         
         XCTAssertEqual(todolist.todos.first?.isCompleted, true)
         
-        todolist.toggleTodo(for: 0)
+        todolist.toggleTodo(for: firstTodo)
         
         XCTAssertEqual(todolist.todos.first?.isCompleted, false)
+    }
+    
+    func testAddTodo() throws {
+        let lastTodo = todolist.todos.last!
+        let newTodo = Todo("Test", priority: .medium, isCompleted: false)
+        
+        todolist.addTodo(todo: newTodo)
+        
+        XCTAssertNotEqual(todolist.todos.last, lastTodo)
+        XCTAssertEqual(todolist.todos.last, newTodo)
     }
 }

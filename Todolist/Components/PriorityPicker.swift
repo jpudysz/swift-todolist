@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct PriorityPicker: View {
+    var showDefaultOption: Bool = true
     @Binding var priority: Priority
     
     var body: some View {
@@ -9,7 +10,9 @@ struct PriorityPicker: View {
                 .font(.caption)
                 .bold()
             Picker("", selection: $priority) {
-                Text("priority-unknown").tag(Priority.unknown)
+                if showDefaultOption {
+                    Text("priority-unknown").tag(Priority.unknown)
+                }
                 ForEach(Priority.allCases.dropFirst(), id: \.self) {
                     Text($0.localized()).tag($0)
                 }

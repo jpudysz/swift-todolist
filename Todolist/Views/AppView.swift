@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AppView: View {
+    @State private var isAddTodoOverlayVisible: Bool = false
     @State private var query: String = ""
     @State private var priority: Priority = .unknown
     @StateObject private var model: Todolist
@@ -13,6 +14,23 @@ struct AppView: View {
                 model: model
             )
             .navigationTitle(String(localized: "my-todos"))
+            .overlay {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button {
+                            isAddTodoOverlayVisible.toggle()
+                        } label: {
+                            AddTodoButton()
+                        }
+                        .sheet(isPresented: $isAddTodoOverlayVisible) {
+                            AddTodoView(isVisible: $isAddTodoOverlayVisible, model: model)
+                        }
+                    }
+                }
+                .padding(.horizontal)
+            }
         }
     }
 

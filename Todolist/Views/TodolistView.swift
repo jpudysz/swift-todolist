@@ -15,7 +15,9 @@ struct TodolistView: View {
                 ForEach(Array(selectedTodos.enumerated()), id: \.element.id) { index, todo in
                     TodoTile(todo: todo)
                         .onTapGesture {
-                            model.toggleTodo(for: index)
+                            withAnimation {
+                                model.toggleTodo(for: todo)
+                            }
                         }
                 }
                 .onDelete(perform: model.deleteItem)

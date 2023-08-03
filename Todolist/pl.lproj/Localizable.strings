@@ -5,3 +5,9 @@
 "priority-low" = "niski";
 "priority-medium" = "średni";
 "priority-high" = "wysoki";
+"common-save" = "Zapisz";
+"common-cancel" = "Anuluj";
+"addtodo-base-section-header" = "Podstawowe informacje";
+"addtodo-base-section-text" = "Co musisz zrobić?";
+"addtodo-other-section-header" = "Inne";
+"addtodo-other-section-completed" = "Czy już to zrobiłeś?";

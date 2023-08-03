@@ -34,7 +34,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA93D3F82A7A9A0100E1C4BD"
+               BlueprintIdentifier = "DA93D4402A7ADAC400E1C4BD"
                BuildableName = "TodolistTests.xctest"
                BlueprintName = "TodolistTests"
                ReferencedContainer = "container:Todolist.xcodeproj">

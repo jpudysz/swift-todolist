@@ -17,4 +17,13 @@ struct Todo: Identifiable, Equatable {
         self.priority = priority
         self.lastModified = self.createdAt
     }
+    
+    init(_ text: String, priority: Priority, isCompleted: Bool) {
+        self.id = UUID()
+        self.createdAt = Date()
+        self.text = text
+        self.isCompleted = isCompleted
+        self.priority = priority
+        self.lastModified = self.createdAt
+    }
 }

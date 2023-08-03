@@ -5,3 +5,9 @@
 "priority-low" = "low";
 "priority-medium" = "medium";
 "priority-high" = "high";
+"common-save" = "Save";
+"common-cancel" = "Cancel";
+"addtodo-base-section-header" = "Base info";
+"addtodo-base-section-text" = "What needs to be done?";
+"addtodo-other-section-header" = "Other info";
+"addtodo-other-section-completed" = "Is it already done?";
