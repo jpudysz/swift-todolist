@@ -8,11 +8,11 @@ struct Checkbox: View {
             isSelected.toggle()
         } label: {
             Circle()
-                .stroke(.black, lineWidth: 2)
+                .stroke(Color("BorderColor"), lineWidth: 2)
                 .cornerRadius(10)
                 .background(
                     Circle()
-                        .foregroundColor(isSelected ? .green : .clear)
+                        .foregroundColor(isSelected ? .accentColor : .clear)
                         .frame(width: 13, height: 13)
                 )
                 .frame(width: 20, height: 20)

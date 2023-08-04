@@ -8,28 +8,32 @@ struct AppView: View {
     
     var body: some View {
         NavigationView {
-            TodolistView(
-                query: $query,
-                priority: $priority,
-                model: model
-            )
-            .navigationTitle(String(localized: "my-todos"))
-            .overlay {
-                VStack {
-                    Spacer()
-                    HStack {
+            ZStack {
+                Color("BackgroundColor")
+                    .ignoresSafeArea()
+                TodolistView(
+                    query: $query,
+                    priority: $priority,
+                    model: model
+                )
+                .navigationTitle(String(localized: "my-todos"))
+                .overlay {
+                    VStack {
                         Spacer()
-                        Button {
-                            isAddTodoOverlayVisible.toggle()
-                        } label: {
-                            AddTodoButton()
-                        }
-                        .sheet(isPresented: $isAddTodoOverlayVisible) {
-                            AddTodoView(isVisible: $isAddTodoOverlayVisible, model: model)
+                        HStack {
+                            Spacer()
+                            Button {
+                                isAddTodoOverlayVisible.toggle()
+                            } label: {
+                                AddTodoButton()
+                            }
+                            .sheet(isPresented: $isAddTodoOverlayVisible) {
+                                AddTodoView(isVisible: $isAddTodoOverlayVisible, model: model)
+                            }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
             }
         }
     }

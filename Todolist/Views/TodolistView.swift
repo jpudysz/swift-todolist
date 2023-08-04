@@ -23,7 +23,7 @@ struct TodolistView: View {
                                 }
                             }
                     }
-                    .listRowBackground(Color.white)
+                    .listRowBackground(Color("BackgroundColor"))
                 }
                 .onDelete(perform: model.deleteItem)
             }

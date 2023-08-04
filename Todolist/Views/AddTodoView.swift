@@ -35,7 +35,7 @@ struct AddTodoView: View {
                     Text("common-save")
                         .frame(width: 200, height: 50)
                         .foregroundColor(.white)
-                        .background(.primary)
+                        .background(Color.accentColor)
                         .cornerRadius(8)
                 }
                 .disabled(text.isEmpty)
@@ -45,7 +45,7 @@ struct AddTodoView: View {
                 } label: {
                     Text("common-cancel")
                         .frame(width: 200, height: 50)
-                        .foregroundColor(.red)
+                        .foregroundColor(.secondary)
                 }
             }
             .padding(.top)
