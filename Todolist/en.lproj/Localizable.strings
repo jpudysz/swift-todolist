@@ -11,3 +11,8 @@
 "addtodo-base-section-text" = "What needs to be done?";
 "addtodo-other-section-header" = "Other info";
 "addtodo-other-section-completed" = "Is it already done?";
+"common-created-at" = "Created at";
+"common-modified-at" = "Last modified at";
+"common-completed" = "Completed";
+"common-yes" = "Yes";
+"common-no" = "No";

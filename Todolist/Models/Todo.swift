@@ -4,9 +4,21 @@ struct Todo: Identifiable, Equatable {
     let id: UUID
     let createdAt: Date
     
-    var text: String
-    var isCompleted: Bool
-    var priority: Priority
+    var text: String {
+        didSet {
+            lastModified = Date()
+        }
+    }
+    var isCompleted: Bool {
+        didSet {
+            lastModified = Date()
+        }
+    }
+    var priority: Priority {
+        didSet {
+            lastModified = Date()
+        }
+    }
     var lastModified: Date
     
     init(_ text: String, priority: Priority = .unknown) {

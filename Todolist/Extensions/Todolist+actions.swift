@@ -48,4 +48,8 @@ extension Todolist {
     func addTodo(todo: Todo) {
         todos.append(todo)
     }
+    
+    func getTodoIndex(todo: Todo) -> Int {
+        return todos.firstIndex(of: todo)!
+    }
 }

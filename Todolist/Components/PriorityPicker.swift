@@ -11,10 +11,11 @@ struct PriorityPicker: View {
                 .bold()
             Picker("", selection: $priority) {
                 if showDefaultOption {
-                    Text("priority-unknown").tag(Priority.unknown)
+                    Text(String(localized: "priority-unknown").capitalized)
+                        .tag(Priority.unknown)
                 }
                 ForEach(Priority.allCases.dropFirst(), id: \.self) {
-                    Text($0.localized()).tag($0)
+                    Text($0.localized().capitalized).tag($0)
                 }
             }
             .padding(.bottom)

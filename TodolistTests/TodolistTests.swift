@@ -82,4 +82,12 @@ final class TodolistTests: XCTestCase {
         XCTAssertNotEqual(todolist.todos.last, lastTodo)
         XCTAssertEqual(todolist.todos.last, newTodo)
     }
+    
+    func testGetTodoIndex() throws {
+        let firstTodo = todolist.todos.first!
+        let secondTodo = todolist.todos[1]
+        
+        XCTAssertEqual(todolist.getTodoIndex(todo: firstTodo), 0)
+        XCTAssertEqual(todolist.getTodoIndex(todo: secondTodo), 1)
+    }
 }

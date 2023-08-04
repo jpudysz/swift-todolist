@@ -11,3 +11,8 @@
 "addtodo-base-section-text" = "Co musisz zrobić?";
 "addtodo-other-section-header" = "Inne";
 "addtodo-other-section-completed" = "Czy już to zrobiłeś?";
+"common-created-at" = "Utworzone";
+"common-modified-at" = "Ostatnia modyfikacja";
+"common-completed" = "Ukończone";
+"common-yes" = "Tak";
+"common-no" = "Nie";

@@ -38,6 +38,8 @@ struct AddTodoView: View {
                         .background(.primary)
                         .cornerRadius(8)
                 }
+                .disabled(text.isEmpty)
+                .foregroundColor(text.isEmpty ? .gray : .blue)
                 Button {
                     isVisible.toggle()
                 } label: {

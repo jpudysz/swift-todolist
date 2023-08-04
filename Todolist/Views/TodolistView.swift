@@ -13,12 +13,17 @@ struct TodolistView: View {
             PriorityPicker(priority: $priority)
             List {
                 ForEach(Array(selectedTodos.enumerated()), id: \.element.id) { index, todo in
-                    TodoTile(todo: todo)
-                        .onTapGesture {
-                            withAnimation {
-                                model.toggleTodo(for: todo)
+                    let baseIndex = model.getTodoIndex(todo: todo)
+                    
+                    NavigationLink(destination: TodoDetailsView(todo: $model.todos[baseIndex])) {
+                        TodoTile(todo: todo)
+                            .onTapGesture {
+                                withAnimation {
+                                    model.toggleTodo(for: todo)
+                                }
                             }
-                        }
+                    }
+                    .listRowBackground(Color.white)
                 }
                 .onDelete(perform: model.deleteItem)
             }

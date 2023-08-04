@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DA4D39332A7BE1B700EC67B2 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D39322A7BE1B700EC67B2 /* AddTodoView.swift */; };
 		DA4D39352A7BE1E200EC67B2 /* AddTodoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D39342A7BE1E200EC67B2 /* AddTodoButton.swift */; };
+		DA86828F2A7D144400AE40FF /* TodoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA86828E2A7D144400AE40FF /* TodoDetailsView.swift */; };
+		DA8682912A7D176500AE40FF /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8682902A7D176500AE40FF /* Checkbox.swift */; };
+		DA8682932A7D237100AE40FF /* TodoProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8682922A7D237100AE40FF /* TodoProperty.swift */; };
 		DA93D3ED2A7A9A0000E1C4BD /* TodolistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D3EC2A7A9A0000E1C4BD /* TodolistApp.swift */; };
 		DA93D3EF2A7A9A0000E1C4BD /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D3EE2A7A9A0000E1C4BD /* AppView.swift */; };
 		DA93D3F12A7A9A0100E1C4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA93D3F02A7A9A0100E1C4BD /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		DA4D39322A7BE1B700EC67B2 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		DA4D39342A7BE1E200EC67B2 /* AddTodoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoButton.swift; sourceTree = "<group>"; };
+		DA86828E2A7D144400AE40FF /* TodoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailsView.swift; sourceTree = "<group>"; };
+		DA8682902A7D176500AE40FF /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		DA8682922A7D237100AE40FF /* TodoProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoProperty.swift; sourceTree = "<group>"; };
 		DA93D3E92A7A9A0000E1C4BD /* Todolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todolist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA93D3EC2A7A9A0000E1C4BD /* TodolistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistApp.swift; sourceTree = "<group>"; };
 		DA93D3EE2A7A9A0000E1C4BD /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 				DA93D3EE2A7A9A0000E1C4BD /* AppView.swift */,
 				DA93D42E2A7AD2D300E1C4BD /* TodolistView.swift */,
 				DA4D39322A7BE1B700EC67B2 /* AddTodoView.swift */,
+				DA86828E2A7D144400AE40FF /* TodoDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +158,8 @@
 				DA93D4332A7AD49500E1C4BD /* PriorityPicker.swift */,
 				DA93D4352A7AD4EF00E1C4BD /* TodoTile.swift */,
 				DA4D39342A7BE1E200EC67B2 /* AddTodoButton.swift */,
+				DA8682902A7D176500AE40FF /* Checkbox.swift */,
+				DA8682922A7D237100AE40FF /* TodoProperty.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,8 +278,11 @@
 				DA93D3EF2A7A9A0000E1C4BD /* AppView.swift in Sources */,
 				DA93D4322A7AD45000E1C4BD /* SearchInput.swift in Sources */,
 				DA93D3ED2A7A9A0000E1C4BD /* TodolistApp.swift in Sources */,
+				DA8682912A7D176500AE40FF /* Checkbox.swift in Sources */,
+				DA8682932A7D237100AE40FF /* TodoProperty.swift in Sources */,
 				DA93D41D2A7A9B8000E1C4BD /* Priority.swift in Sources */,
 				DA4D39352A7BE1E200EC67B2 /* AddTodoButton.swift in Sources */,
+				DA86828F2A7D144400AE40FF /* TodoDetailsView.swift in Sources */,
 				DA93D4362A7AD4EF00E1C4BD /* TodoTile.swift in Sources */,
 				DA4D39332A7BE1B700EC67B2 /* AddTodoView.swift in Sources */,
 				DA93D42F2A7AD2D300E1C4BD /* TodolistView.swift in Sources */,
