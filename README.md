@@ -1,6 +1,7 @@
 # swift-todolist playground
 
-![RocketSim_Recording_iPhone_14_Pro_2023-08-03_16 28 30](https://github.com/jpudysz/swift-todolist/assets/9088288/9a3eb1e4-6d02-498b-9bdc-37eae15347d5)
+![RocketSim_Recording_iPhone_14_Pro_2023-08-04_16 59 32](https://github.com/jpudysz/swift-todolist/assets/9088288/e40526e8-26ea-44a0-a460-c027acee955b)
+
 
 Playing with SwiftUI and multiple features:
 - [x] styling with modifiers
@@ -19,10 +20,10 @@ Playing with SwiftUI and multiple features:
 - [x] XCTest for main model
 - [x] basic navigation
 - [x] Assets.xcassets
+- [x] dark mode
 - [ ] convenience init
 - [ ] custom protocol
 - [ ] error handling
-- [x] dark mode
 - [ ] horizontal mode
 - [ ] `@EnvironmentObject`
 - [ ] `Image` for Todo
