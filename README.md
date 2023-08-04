@@ -17,12 +17,12 @@ Playing with SwiftUI and multiple features:
 - [x] basic animations
 - [x] optionals
 - [x] XCTest for main model
-- [ ] basic navigation
-- [ ] Assets.xcassets
+- [x] basic navigation
+- [x] Assets.xcassets
 - [ ] convenience init
 - [ ] custom protocol
 - [ ] error handling
-- [ ] dark mode
+- [x] dark mode
 - [ ] horizontal mode
 - [ ] `@EnvironmentObject`
 - [ ] `Image` for Todo
