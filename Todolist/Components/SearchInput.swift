@@ -4,11 +4,17 @@ struct SearchInput: View {
     @Binding var query: String
     
     var body: some View {
-        TextField(String(localized: "search-placeholder"), text: $query)
-            .textFieldStyle(.roundedBorder)
-            .padding(.bottom)
-            .autocorrectionDisabled(true)
-            .textInputAutocapitalization(.never)
+        HStack {
+            Image(systemName: "magnifyingglass")
+            TextField(String(localized: "search-placeholder"), text: $query)
+                .frame(height: 30)
+                .padding(.vertical, 6)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
+        }
+        .padding(.horizontal)
+        .background(Color("SecondaryColor"))
+        .cornerRadius(10)
     }
 }
 

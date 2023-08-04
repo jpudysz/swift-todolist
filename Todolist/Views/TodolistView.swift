@@ -22,12 +22,14 @@ struct TodolistView: View {
                                     model.toggleTodo(for: todo)
                                 }
                             }
-                    }
+                    }                }
+                    .onDelete(perform: model.deleteItem)
                     .listRowBackground(Color("BackgroundColor"))
-                }
-                .onDelete(perform: model.deleteItem)
             }
-            .listStyle(.inset)
+            .listStyle(.grouped)
+            .listSectionSeparator(.visible, edges: .bottom)
+            .background(Color("BackgroundColor"))
+            .scrollContentBackground(.hidden)
         }
         .animation(.default, value: priority)
         .animation(.default, value: query)

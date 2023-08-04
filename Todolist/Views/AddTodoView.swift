@@ -8,47 +8,51 @@ struct AddTodoView: View {
     @StateObject var model: Todolist
     
     var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("addtodo-base-section-header")) {
-                    TextField(String(localized: "addtodo-base-section-text"), text: $text)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.never)
-                    PriorityPicker(showDefaultOption: false, priority: $priority)
-                }
-                Section(header: Text("addtodo-other-section-header")) {
-                    Toggle(String(localized: "addtodo-other-section-completed"), isOn: $isCompleted)
-                }
-            }
-            Spacer()
+        ZStack {
+            Color("BackgroundColor")
+                .ignoresSafeArea()
             VStack {
-                Button {
-                    let newTodo = Todo(
-                        text,
-                        priority: priority,
-                        isCompleted: isCompleted
-                    )
-                    
-                    model.addTodo(todo: newTodo)
-                    isVisible.toggle()
-                } label: {
-                    Text("common-save")
-                        .frame(width: 200, height: 50)
-                        .foregroundColor(.white)
-                        .background(Color.accentColor)
-                        .cornerRadius(8)
+                Form {
+                    Section(header: Text("addtodo-base-section-header")) {
+                        TextField(String(localized: "addtodo-base-section-text"), text: $text)
+                            .autocorrectionDisabled(true)
+                            .textInputAutocapitalization(.never)
+                        PriorityPicker(showDefaultOption: false, priority: $priority)
+                    }
+                    Section(header: Text("addtodo-other-section-header")) {
+                        Toggle(String(localized: "addtodo-other-section-completed"), isOn: $isCompleted)
+                    }
                 }
-                .disabled(text.isEmpty)
-                .foregroundColor(text.isEmpty ? .gray : .blue)
-                Button {
-                    isVisible.toggle()
-                } label: {
-                    Text("common-cancel")
-                        .frame(width: 200, height: 50)
-                        .foregroundColor(.secondary)
+                Spacer()
+                VStack {
+                    Button {
+                        let newTodo = Todo(
+                            text,
+                            priority: priority,
+                            isCompleted: isCompleted
+                        )
+                        
+                        model.addTodo(todo: newTodo)
+                        isVisible.toggle()
+                    } label: {
+                        Text("common-save")
+                            .frame(width: 200, height: 50)
+                            .foregroundColor(.white)
+                            .background(Color.accentColor)
+                            .cornerRadius(8)
+                    }
+                    .disabled(text.isEmpty)
+                    .foregroundColor(text.isEmpty ? .gray : .blue)
+                    Button {
+                        isVisible.toggle()
+                    } label: {
+                        Text("common-cancel")
+                            .frame(width: 200, height: 50)
+                            .foregroundColor(.secondary)
+                    }
                 }
+                .padding(.top)
             }
-            .padding(.top)
         }
     }
 }
