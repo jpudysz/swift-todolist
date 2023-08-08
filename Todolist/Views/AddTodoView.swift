@@ -6,6 +6,7 @@ struct AddTodoView: View {
     @State private var isCompleted: Bool = false
     @Binding var isVisible: Bool
     @StateObject var model: Todolist
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
         ZStack {
@@ -22,43 +23,76 @@ struct AddTodoView: View {
                     Section(header: Text("addtodo-other-section-header")) {
                         Toggle(String(localized: "addtodo-other-section-completed"), isOn: $isCompleted)
                     }
-                }
-                Spacer()
-                VStack {
-                    Button {
-                        let newTodo = Todo(
-                            text,
-                            priority: priority,
-                            isCompleted: isCompleted
+                    if horizontalSizeClass == .compact {
+                        AddTodoActionsView(
+                            onSuccess: onSuccess,
+                            onCancel: onCancel,
+                            text: $text
                         )
-                        
-                        model.addTodo(todo: newTodo)
-                        isVisible.toggle()
-                    } label: {
-                        Text("common-save")
-                            .frame(width: 200, height: 50)
-                            .foregroundColor(.white)
-                            .background(Color.accentColor)
-                            .cornerRadius(8)
-                    }
-                    .disabled(text.isEmpty)
-                    .foregroundColor(text.isEmpty ? .gray : .blue)
-                    Button {
-                        isVisible.toggle()
-                    } label: {
-                        Text("common-cancel")
-                            .frame(width: 200, height: 50)
-                            .foregroundColor(.secondary)
                     }
                 }
-                .padding(.top)
+                if horizontalSizeClass == .regular {
+                    AddTodoActionsView(
+                        onSuccess: onSuccess,
+                        onCancel: onCancel,
+                        text: $text
+                    )
+                }
             }
         }
+    }
+    
+    func onSuccess() {
+        let newTodo = Todo(
+            text,
+            priority: priority,
+            isCompleted: isCompleted
+        )
+        
+        model.addTodo(todo: newTodo)
+        isVisible.toggle()
+    }
+    
+    func onCancel() {
+        isVisible.toggle()
     }
 }
 
 struct AddTodoView_Previews: PreviewProvider {
     static var previews: some View {
         AddTodoView(isVisible: .constant(true), model: Todolist(useMock: true))
+    }
+}
+
+struct AddTodoActionsView: View {
+    var onSuccess: () -> Void
+    var onCancel: () -> Void
+    
+    @Binding var text: String
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            VStack {
+                Text("common-save")
+                    .frame(width: 200, height: 50)
+                    .foregroundColor(.white)
+                    .background(Color.accentColor)
+                    .cornerRadius(8)
+                    .disabled(text.isEmpty)
+                    .foregroundColor(text.isEmpty ? .gray : .blue)
+                    .onTapGesture {
+                        onSuccess()
+                    }
+                Text("common-cancel")
+                    .frame(width: 200, height: 50)
+                    .foregroundColor(.secondary)
+                    .onTapGesture {
+                        onCancel()
+                    }
+            }
+            Spacer()
+        }
+        .padding(.top, 20)
     }
 }

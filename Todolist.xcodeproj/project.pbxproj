@@ -26,6 +26,7 @@
 		DA93D4362A7AD4EF00E1C4BD /* TodoTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D4352A7AD4EF00E1C4BD /* TodoTile.swift */; };
 		DA93D4392A7AD5DB00E1C4BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA93D43B2A7AD5DB00E1C4BD /* Localizable.strings */; };
 		DA93D4442A7ADAC400E1C4BD /* TodolistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D4432A7ADAC400E1C4BD /* TodolistTests.swift */; };
+		DAD8E8832A827F4B008AD29E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD8E8822A827F4B008AD29E /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DA93D43C2A7AD75300E1C4BD /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA93D4412A7ADAC400E1C4BD /* TodolistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA93D4432A7ADAC400E1C4BD /* TodolistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistTests.swift; sourceTree = "<group>"; };
+		DAD8E8822A827F4B008AD29E /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				DA93D3F02A7A9A0100E1C4BD /* Assets.xcassets */,
 				DA93D3F22A7A9A0100E1C4BD /* Preview Content */,
 				DA93D43B2A7AD5DB00E1C4BD /* Localizable.strings */,
+				DAD8E8822A827F4B008AD29E /* Protocols.swift */,
 			);
 			path = Todolist;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				DA93D41F2A7A9DAF00E1C4BD /* Todolist.swift in Sources */,
 				DA93D4342A7AD49500E1C4BD /* PriorityPicker.swift in Sources */,
 				DA93D41B2A7A9B4600E1C4BD /* Todo.swift in Sources */,
+				DAD8E8832A827F4B008AD29E /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

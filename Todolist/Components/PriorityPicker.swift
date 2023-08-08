@@ -15,7 +15,7 @@ struct PriorityPicker: View {
                         .tag(Priority.unknown)
                 }
                 ForEach(Priority.allCases.dropFirst(), id: \.self) {
-                    Text($0.localized().capitalized).tag($0)
+                    Text($0.toLocalizedString().capitalized).tag($0)
                 }
             }
             .padding(.bottom)

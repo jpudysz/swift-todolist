@@ -26,7 +26,7 @@ struct TodolistView: View {
                     .onDelete(perform: model.deleteItem)
                     .listRowBackground(Color("BackgroundColor"))
             }
-            .listStyle(.grouped)
+            .listStyle(.inset)
             .listSectionSeparator(.visible, edges: .bottom)
             .background(Color("BackgroundColor"))
             .scrollContentBackground(.hidden)

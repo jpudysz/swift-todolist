@@ -1,12 +1,12 @@
 import Foundation
 
-enum Priority: String, CaseIterable {
+enum Priority: String, CaseIterable, Localizable {
     case unknown
     case low
     case medium
     case high
     
-    func localized() -> String {
+    func toLocalizedString() -> String {
         NSLocalizedString("priority-\(self.rawValue)", comment: "")
     }
 }
