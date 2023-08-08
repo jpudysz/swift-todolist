@@ -21,11 +21,11 @@ Playing with SwiftUI and multiple features:
 - [x] basic navigation
 - [x] Assets.xcassets
 - [x] dark mode
-- [ ] convenience init
-- [ ] custom protocol
-- [ ] error handling
-- [ ] horizontal mode
-- [ ] `@EnvironmentObject`
+- [x] convenience init
+- [x] custom protocol
+- [x] error handling
+- [x] horizontal mode
+- [x] `@EnvironmentObject`
 - [ ] `Image` for Todo
 - [ ] `Core Location`
 - [ ] DatePicker
