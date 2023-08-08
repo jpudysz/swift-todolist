@@ -4,6 +4,8 @@ struct AddTodoView: View {
     @State private var priority: Priority = .low
     @State private var text: String = ""
     @State private var isCompleted: Bool = false
+    @State private var isImagePickerVisible: Bool = false
+    @State private var selectedImage: (UIImage, URL)?
     @Binding var isVisible: Bool
     @StateObject var model: Todolist
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -19,6 +21,36 @@ struct AddTodoView: View {
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
                         PriorityPicker(showDefaultOption: false, priority: $priority)
+                    }
+                    Section(header: Text("addtodo-image-header")) {
+                        if let (image, _) = selectedImage {
+                            ZStack(alignment: .topTrailing) {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 200)
+                                Button {
+                                    selectedImage = nil
+                                } label: {
+                                    Circle()
+                                        .fill(.black)
+                                        .background(.black)
+                                        .cornerRadius(50)
+                                        .frame(width: 30, height: 30)
+                                        .overlay {
+                                            Image(systemName: "trash")
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding(.trailing, 5)
+                                        .padding(.top, 5)
+                                }
+                            }
+                        }
+                        Button {
+                            isImagePickerVisible.toggle()
+                        } label: {
+                            Text(selectedImage != nil ? "addtodo-image-change" : "addtodo-image-add")
+                        }
                     }
                     Section(header: Text("addtodo-other-section-header")) {
                         Toggle(String(localized: "addtodo-other-section-completed"), isOn: $isCompleted)
@@ -39,14 +71,28 @@ struct AddTodoView: View {
                     )
                 }
             }
+            .sheet(isPresented: $isImagePickerVisible, onDismiss: {}) {
+                ImagePickerController(onCancel: {}) { selectedImage, selectedImageURI in
+                    self.selectedImage = (selectedImage, selectedImageURI)
+                }
+            }
         }
+    }
+    
+    func getImageURI() -> String? {
+        guard let (_, imageURI) = selectedImage else {
+            return nil
+        }
+        
+        return imageURI.absoluteString
     }
     
     func onSuccess() {
         let newTodo = Todo(
             text,
             priority: priority,
-            isCompleted: isCompleted
+            isCompleted: isCompleted,
+            imageURI: getImageURI()
         )
         
         model.addTodo(todo: newTodo)

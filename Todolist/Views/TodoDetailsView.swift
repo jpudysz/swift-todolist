@@ -15,7 +15,8 @@ struct TodoDetailsView: View {
                         .bold()
                 }
                 .padding(.top, 50)
-                .padding(.bottom, 40)
+                .padding(.bottom, todo.imageURI != nil ? 0 : 40)
+                TodoImage(imageURI: todo.imageURI)
                 TodoProperty(
                     label: String(localized: "priority"),
                     value: todo.priority.rawValue.capitalized,

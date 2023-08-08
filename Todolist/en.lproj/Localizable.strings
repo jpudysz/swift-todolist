@@ -11,6 +11,9 @@
 "addtodo-base-section-text" = "What needs to be done?";
 "addtodo-other-section-header" = "Other info";
 "addtodo-other-section-completed" = "Is it already done?";
+"addtodo-image-header" = "Pick image (optional)";
+"addtodo-image-change" = "Change image";
+"addtodo-image-add" = "Pick image";
 "common-created-at" = "Created at";
 "common-modified-at" = "Last modified at";
 "common-completed" = "Completed";

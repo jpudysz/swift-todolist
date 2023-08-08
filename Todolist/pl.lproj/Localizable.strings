@@ -11,6 +11,10 @@
 "addtodo-base-section-text" = "Co musisz zrobić?";
 "addtodo-other-section-header" = "Inne";
 "addtodo-other-section-completed" = "Czy już to zrobiłeś?";
+"addtodo-image-header" = "Wybierz zdjęcie (opcjonalne)";
+"addtodo-image-change" = "Zmień zdjęcie";
+"addtodo-image-add" = "Dodaj zdjęcie";
+"common-created-at" = "Created at";
 "common-created-at" = "Utworzone";
 "common-modified-at" = "Ostatnia modyfikacja";
 "common-completed" = "Ukończone";
