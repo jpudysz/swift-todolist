@@ -27,10 +27,11 @@ Playing with SwiftUI and multiple features:
 - [x] horizontal mode
 - [x] `@EnvironmentObject`
 - [x] `Image` for Todo
-- [ ] `Core Location`
-- [ ] DatePicker
+- [x] `UIViewControllerRepresentable`
+- [x]  DatePicker
 - [ ] `MapKit`
 - [ ] `UIViewRepresentable`
+- [ ] `Core Location`
 - [ ] Data persitance with `JSON` and `DocumentDirectory`
 - [ ] `Core Data`
 - [ ] `URLSession`
