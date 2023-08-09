@@ -23,6 +23,13 @@ struct TodoDetailsView: View {
                     systemImage: "p.square"
                 )
                 TodoProperty(
+                    label: String(localized: "common-deadline"),
+                    value: todo.deadline != nil
+                        ? todo.deadline!.formatted()
+                        : "-",
+                    systemImage: "clock.arrow.circlepath"
+                )
+                TodoProperty(
                     label: String(localized: "common-created-at"),
                     value: todo.createdAt.formatted(),
                     systemImage: "clock"

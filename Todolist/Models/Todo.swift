@@ -24,6 +24,11 @@ struct Todo: Identifiable, Equatable {
             lastModified = Date()
         }
     }
+    var deadline: Date? {
+        didSet {
+            lastModified = Date()
+        }
+    }
     var lastModified: Date
     
     init(_ text: String, priority: Priority = .unknown) {
@@ -33,9 +38,10 @@ struct Todo: Identifiable, Equatable {
         self.isCompleted = false
         self.priority = priority
         self.lastModified = self.createdAt
+        self.deadline = nil
     }
     
-    init(_ text: String, priority: Priority, isCompleted: Bool, imageURI: String?) {
+    init(_ text: String, priority: Priority, isCompleted: Bool, deadline: Date?, imageURI: String?) {
         self.id = UUID()
         self.createdAt = Date()
         self.text = text
@@ -43,5 +49,6 @@ struct Todo: Identifiable, Equatable {
         self.priority = priority
         self.lastModified = self.createdAt
         self.imageURI = imageURI
+        self.deadline = deadline
     }
 }

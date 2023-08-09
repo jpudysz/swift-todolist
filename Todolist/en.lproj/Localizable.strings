@@ -14,8 +14,10 @@
 "addtodo-image-header" = "Pick image (optional)";
 "addtodo-image-change" = "Change image";
 "addtodo-image-add" = "Pick image";
+"addtodo-deadline-section-header" = "Deadline";
 "common-created-at" = "Created at";
 "common-modified-at" = "Last modified at";
 "common-completed" = "Completed";
 "common-yes" = "Yes";
 "common-no" = "No";
+"common-deadline" = "Deadline";

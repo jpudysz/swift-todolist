@@ -5,6 +5,7 @@ struct AddTodoView: View {
     @State private var text: String = ""
     @State private var isCompleted: Bool = false
     @State private var isImagePickerVisible: Bool = false
+    @State private var deadline: Date = Date()
     @State private var selectedImage: (UIImage, URL)?
     @Binding var isVisible: Bool
     @StateObject var model: Todolist
@@ -55,6 +56,10 @@ struct AddTodoView: View {
                     Section(header: Text("addtodo-other-section-header")) {
                         Toggle(String(localized: "addtodo-other-section-completed"), isOn: $isCompleted)
                     }
+                    Section(header: Text("addtodo-deadline-section-header")) {
+                        DatePicker(selection: $deadline, label: { Text("") })
+                            .datePickerStyle(.graphical)
+                    }
                     if horizontalSizeClass == .compact {
                         AddTodoActionsView(
                             onSuccess: onSuccess,
@@ -92,6 +97,7 @@ struct AddTodoView: View {
             text,
             priority: priority,
             isCompleted: isCompleted,
+            deadline: deadline,
             imageURI: getImageURI()
         )
         
