@@ -26,7 +26,7 @@ Playing with SwiftUI and multiple features:
 - [x] error handling
 - [x] horizontal mode
 - [x] `@EnvironmentObject`
-- [ ] `Image` for Todo
+- [x] `Image` for Todo
 - [ ] `Core Location`
 - [ ] DatePicker
 - [ ] `MapKit`
