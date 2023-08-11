@@ -29,8 +29,8 @@ Playing with SwiftUI and multiple features:
 - [x] `Image` for Todo
 - [x] `UIViewControllerRepresentable`
 - [x]  DatePicker
-- [ ] `MapKit`
-- [ ] `UIViewRepresentable`
+- [x] `MapKit`
+- [x] `UIViewRepresentable`
 - [ ] `Core Location`
 - [ ] Data persitance with `JSON` and `DocumentDirectory`
 - [ ] `Core Data`
