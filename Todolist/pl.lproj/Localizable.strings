@@ -15,6 +15,9 @@
 "addtodo-image-change" = "Zmień zdjęcie";
 "addtodo-image-add" = "Dodaj zdjęcie";
 "addtodo-deadline-section-header" = "Deadline";
+"addtodo-location-section-header" = "Lokalizacja";
+"addtodo-location-add" = "Dodaj lokalizację"
+"common-location" = "Lokalizacja";
 "common-created-at" = "Created at";
 "common-created-at" = "Utworzone";
 "common-modified-at" = "Ostatnia modyfikacja";

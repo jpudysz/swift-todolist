@@ -26,6 +26,10 @@
 		DA93D4362A7AD4EF00E1C4BD /* TodoTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D4352A7AD4EF00E1C4BD /* TodoTile.swift */; };
 		DA93D4392A7AD5DB00E1C4BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA93D43B2A7AD5DB00E1C4BD /* Localizable.strings */; };
 		DA93D4442A7ADAC400E1C4BD /* TodolistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA93D4432A7ADAC400E1C4BD /* TodolistTests.swift */; };
+		DACBC1652A856401003DB70C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACBC1642A856401003DB70C /* MapView.swift */; };
+		DACBC1682A869080003DB70C /* SelectImageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACBC1672A869080003DB70C /* SelectImageSection.swift */; };
+		DACBC16A2A869125003DB70C /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACBC1692A869125003DB70C /* LocationPicker.swift */; };
+		DACBC16C2A8691A4003DB70C /* FormActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACBC16B2A8691A4003DB70C /* FormActionsView.swift */; };
 		DAD8E8832A827F4B008AD29E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD8E8822A827F4B008AD29E /* Protocols.swift */; };
 		DAD8E8862A82A289008AD29E /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD8E8852A82A289008AD29E /* ImagePickerController.swift */; };
 		DAD8E8882A82B6C6008AD29E /* TodoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD8E8872A82B6C6008AD29E /* TodoImage.swift */; };
@@ -64,6 +68,10 @@
 		DA93D43C2A7AD75300E1C4BD /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA93D4412A7ADAC400E1C4BD /* TodolistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA93D4432A7ADAC400E1C4BD /* TodolistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistTests.swift; sourceTree = "<group>"; };
+		DACBC1642A856401003DB70C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		DACBC1672A869080003DB70C /* SelectImageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageSection.swift; sourceTree = "<group>"; };
+		DACBC1692A869125003DB70C /* LocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
+		DACBC16B2A8691A4003DB70C /* FormActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormActionsView.swift; sourceTree = "<group>"; };
 		DAD8E8822A827F4B008AD29E /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DAD8E8852A82A289008AD29E /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		DAD8E8872A82B6C6008AD29E /* TodoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoImage.swift; sourceTree = "<group>"; };
@@ -108,7 +116,7 @@
 		DA93D3EB2A7A9A0000E1C4BD /* Todolist */ = {
 			isa = PBXGroup;
 			children = (
-				DAD8E8842A82A271008AD29E /* Controllers */,
+				DAD8E8842A82A271008AD29E /* Representable */,
 				DA93D4302A7AD44100E1C4BD /* Components */,
 				DA93D4202A7ACF9500E1C4BD /* Extensions */,
 				DA93D4192A7A9B3800E1C4BD /* Models */,
@@ -133,6 +141,7 @@
 		DA93D4162A7A9AE700E1C4BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DACBC1662A86905B003DB70C /* AddTodoViewForm */,
 				DA93D3EE2A7A9A0000E1C4BD /* AppView.swift */,
 				DA93D42E2A7AD2D300E1C4BD /* TodolistView.swift */,
 				DA4D39322A7BE1B700EC67B2 /* AddTodoView.swift */,
@@ -181,12 +190,23 @@
 			path = TodolistTests;
 			sourceTree = "<group>";
 		};
-		DAD8E8842A82A271008AD29E /* Controllers */ = {
+		DACBC1662A86905B003DB70C /* AddTodoViewForm */ = {
+			isa = PBXGroup;
+			children = (
+				DACBC1672A869080003DB70C /* SelectImageSection.swift */,
+				DACBC1692A869125003DB70C /* LocationPicker.swift */,
+				DACBC16B2A8691A4003DB70C /* FormActionsView.swift */,
+			);
+			path = AddTodoViewForm;
+			sourceTree = "<group>";
+		};
+		DAD8E8842A82A271008AD29E /* Representable */ = {
 			isa = PBXGroup;
 			children = (
 				DAD8E8852A82A289008AD29E /* ImagePickerController.swift */,
+				DACBC1642A856401003DB70C /* MapView.swift */,
 			);
-			path = Controllers;
+			path = Representable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +316,11 @@
 				DA93D4322A7AD45000E1C4BD /* SearchInput.swift in Sources */,
 				DA93D3ED2A7A9A0000E1C4BD /* TodolistApp.swift in Sources */,
 				DA8682912A7D176500AE40FF /* Checkbox.swift in Sources */,
+				DACBC16C2A8691A4003DB70C /* FormActionsView.swift in Sources */,
+				DACBC16A2A869125003DB70C /* LocationPicker.swift in Sources */,
 				DA8682932A7D237100AE40FF /* TodoProperty.swift in Sources */,
 				DA93D41D2A7A9B8000E1C4BD /* Priority.swift in Sources */,
+				DACBC1652A856401003DB70C /* MapView.swift in Sources */,
 				DA4D39352A7BE1E200EC67B2 /* AddTodoButton.swift in Sources */,
 				DA86828F2A7D144400AE40FF /* TodoDetailsView.swift in Sources */,
 				DA93D4362A7AD4EF00E1C4BD /* TodoTile.swift in Sources */,
@@ -305,6 +328,7 @@
 				DA93D42F2A7AD2D300E1C4BD /* TodolistView.swift in Sources */,
 				DA93D41F2A7A9DAF00E1C4BD /* Todolist.swift in Sources */,
 				DAD8E8882A82B6C6008AD29E /* TodoImage.swift in Sources */,
+				DACBC1682A869080003DB70C /* SelectImageSection.swift in Sources */,
 				DAD8E8862A82A289008AD29E /* ImagePickerController.swift in Sources */,
 				DA93D4342A7AD49500E1C4BD /* PriorityPicker.swift in Sources */,
 				DA93D41B2A7A9B4600E1C4BD /* Todo.swift in Sources */,

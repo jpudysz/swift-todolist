@@ -1,12 +1,15 @@
 import SwiftUI
+import MapKit
 
 struct AddTodoView: View {
     @State private var priority: Priority = .low
     @State private var text: String = ""
     @State private var isCompleted: Bool = false
     @State private var isImagePickerVisible: Bool = false
+    @State private var isLocationPickerVisible: Bool = false
     @State private var deadline: Date = Date()
     @State private var selectedImage: (UIImage, URL)?
+    @State var selectedAnnotation: MKPointAnnotation?
     @Binding var isVisible: Bool
     @StateObject var model: Todolist
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -23,45 +26,23 @@ struct AddTodoView: View {
                             .textInputAutocapitalization(.never)
                         PriorityPicker(showDefaultOption: false, priority: $priority)
                     }
-                    Section(header: Text("addtodo-image-header")) {
-                        if let (image, _) = selectedImage {
-                            ZStack(alignment: .topTrailing) {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 200)
-                                Button {
-                                    selectedImage = nil
-                                } label: {
-                                    Circle()
-                                        .fill(.black)
-                                        .background(.black)
-                                        .cornerRadius(50)
-                                        .frame(width: 30, height: 30)
-                                        .overlay {
-                                            Image(systemName: "trash")
-                                                .foregroundColor(.white)
-                                        }
-                                        .padding(.trailing, 5)
-                                        .padding(.top, 5)
-                                }
-                            }
-                        }
-                        Button {
-                            isImagePickerVisible.toggle()
-                        } label: {
-                            Text(selectedImage != nil ? "addtodo-image-change" : "addtodo-image-add")
-                        }
-                    }
+                    SelectImageSection(isVisible: $isImagePickerVisible, selectedImage: $selectedImage)
                     Section(header: Text("addtodo-other-section-header")) {
                         Toggle(String(localized: "addtodo-other-section-completed"), isOn: $isCompleted)
+                    }
+                    Section(header: Text("addtodo-location-section-header")) {
+                        Toggle(String(localized: "addtodo-location-add"), isOn: $isLocationPickerVisible)
+                        if let location = selectedAnnotation {
+                            // todo decode it
+                            Text("\(String(localized: "common-location")): \(location.coordinate.latitude),\(location.coordinate.longitude)")
+                        }
                     }
                     Section(header: Text("addtodo-deadline-section-header")) {
                         DatePicker(selection: $deadline, label: { Text("") })
                             .datePickerStyle(.graphical)
                     }
                     if horizontalSizeClass == .compact {
-                        AddTodoActionsView(
+                        FormActionsView(
                             onSuccess: onSuccess,
                             onCancel: onCancel,
                             text: $text
@@ -69,7 +50,7 @@ struct AddTodoView: View {
                     }
                 }
                 if horizontalSizeClass == .regular {
-                    AddTodoActionsView(
+                    FormActionsView(
                         onSuccess: onSuccess,
                         onCancel: onCancel,
                         text: $text
@@ -80,6 +61,11 @@ struct AddTodoView: View {
                 ImagePickerController(onCancel: {}) { selectedImage, selectedImageURI in
                     self.selectedImage = (selectedImage, selectedImageURI)
                 }
+            }
+            .sheet(isPresented: $isLocationPickerVisible) {
+                // todo display selected locatio
+                // todo add option to remove selected location
+                LocationPicker(isVisible: $isLocationPickerVisible, selectedAnnotation: $selectedAnnotation)
             }
         }
     }
@@ -93,6 +79,7 @@ struct AddTodoView: View {
     }
     
     func onSuccess() {
+        // todo add coordiante to model
         let newTodo = Todo(
             text,
             priority: priority,
@@ -113,38 +100,5 @@ struct AddTodoView: View {
 struct AddTodoView_Previews: PreviewProvider {
     static var previews: some View {
         AddTodoView(isVisible: .constant(true), model: Todolist(useMock: true))
-    }
-}
-
-struct AddTodoActionsView: View {
-    var onSuccess: () -> Void
-    var onCancel: () -> Void
-    
-    @Binding var text: String
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            VStack {
-                Text("common-save")
-                    .frame(width: 200, height: 50)
-                    .foregroundColor(.white)
-                    .background(Color.accentColor)
-                    .cornerRadius(8)
-                    .disabled(text.isEmpty)
-                    .foregroundColor(text.isEmpty ? .gray : .blue)
-                    .onTapGesture {
-                        onSuccess()
-                    }
-                Text("common-cancel")
-                    .frame(width: 200, height: 50)
-                    .foregroundColor(.secondary)
-                    .onTapGesture {
-                        onCancel()
-                    }
-            }
-            Spacer()
-        }
-        .padding(.top, 20)
     }
 }
